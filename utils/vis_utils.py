@@ -38,7 +38,7 @@ def show_cross_attention(prompt: str,
 def show_image_relevance(image_relevance, image: Image.Image, relevnace_res=16):
     # create heatmap from mask on image
     def show_cam_on_image(img, mask):
-        heatmap = cv2.applyColorMap(np.uint8(255 * mask), cv2.COLORMAP_JET)
+        heatmap = cv2.applyColorMap(np.uint8(255 * mask), cv2.COLORMAP_HSV)
         heatmap = np.float32(heatmap) / 255
         cam = heatmap + np.float32(img)
         cam = cam / np.max(cam)
